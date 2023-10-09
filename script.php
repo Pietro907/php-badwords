@@ -2,7 +2,8 @@
 
 $text = $_GET['text'];
 $censured = $_GET['censured'];
-
+$countCensured = strlen($censured);
+$outputCensured = substr_replace(' ', str_repeat('*', $countCensured), $countCensured);
 
 
 
@@ -27,15 +28,15 @@ $censured = $_GET['censured'];
 
         <p>Text: <?php echo $text; ?> <?php echo strlen($text); ?></p>
 
-        <p>Text censured:
+        <p>Text censured: 
 
             <?php
-
-            if (strlen($censured)) {
+                echo $outputCensured
+          /*   if ($censured == $arrayCensured) {
                 echo $censured;
             } else {
                 echo "***";
-            }; 
+            };  */
             
             ?>
 
